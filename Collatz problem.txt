@@ -1,0 +1,43 @@
+/*
+Starting with any positive integer N, we define the Collatz sequence corresponding to N as the numbers formed by the following operations:
+N ? N/2 ( if N is even)
+N ? 3N + 1 (if N is odd)
+i.e. If N is even, divide it by 2 to get N/2.
+If N is odd, multiply it by 3 and add 1 to obtain 3N + 1.
+It is conjectured but not yet proven that no matter which positive integer we start with; we always end up with 1.
+For example, 10 ? 5 ? 16 ? 8 ? 4 ? 2 ? 1
+*/
+
+#include <iostream>
+using namespace std;
+
+int collatz(int a)
+{
+  if(a>=1)
+    if(a%2 == 0)
+     {
+       cout<<a<<", ";
+       a = a/2;
+       eulear(a);
+     }
+     else
+      {
+        cout<<a<<" ";
+        a = (3*a) + 1;
+        eulear(a);
+      }
+  else if (a == 1)
+  {
+    cout<<a;
+    return 0;
+  }
+  else
+    return 0;
+}
+
+int main()
+{
+  int a;
+  cin>>a;
+  collatz(a);
+}
